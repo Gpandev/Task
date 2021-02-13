@@ -1,0 +1,351 @@
+@import 'variable';
+
+
+
+@function convert($value, $convertUnit, $convertBase: $convertBase) {
+    $currentUnit: unit($value);
+    $strippedValue: $value / ($value * 0 + 1);
+    @if not unitless($convertBase) {
+      @if unit($convertBase) != px {
+        @error "Not supported unit '#{unit($convertBase)}' as convert base!";
+      }
+      $convertBase: $convertBase / ($convertBase * 0 + 1);
+    }
+    
+    @if $currentUnit == px {
+      @if $convertUnit == 'em' {
+        @return 0em + ($strippedValue / $convertBase);
+      }
+      @else if $convertUnit == '%' {
+        @return percentage($strippedValue / $convertBase);
+      }
+    }
+    @else if $currentUnit == em {
+      @if $convertUnit == 'px' {
+        @return 0px + ($strippedValue * $convertBase);
+      }
+      @else if $convertUnit == '%' {
+         @return percentage($strippedValue);
+      }
+    }
+    @else if $currentUnit == '%' {
+      @if $convertUnit == 'px' {
+        @return 0em + ($strippedValue * $convertBase / 100);
+      }
+      @else if $convertUnit == 'em' {
+        @return 0em + ($strippedValue / 100);
+      }
+    }
+    
+    @else if $currentUnit == pt {
+      @if $convertUnit == 'px' {
+        @return 0px + ($strippedValue * 1.3333);
+      }
+      @else if $convertUnit == 'em' {
+        @return 0em + ($strippedValue / 12);
+      }
+      @else if $convertUnit == '%' {
+          @return percentage($strippedValue / 12)
+      }
+    }
+    @error "Can't convert '#{$value}' to unit '#{$convertUnit}'!";
+  }
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    box-sizing: border-box;
+
+}
+
+
+#wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 10px 64px 0 64px;
+
+    .vertical-logo {
+        width: 32px;
+        height: 110px;
+        margin-top: 75px;
+        background-color: #066666;
+        position: absolute;
+        margin-left: -64px;
+
+        span {
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+            color: white;
+            font-family: $font-family-logo;
+            font-size: 29px;
+            line-height: 23px;
+            letter-spacing: -13px;
+            padding-left: 4px;
+
+        }
+    }
+
+    .navHeader {
+        height: auto;
+        background-color: #022929;
+        margin-bottom: 10px;
+        padding-top: 14px;
+
+        .headerLogo {
+            background-color: #066666;
+            height: 32px;
+            width: 106px;
+            padding: 7px 21px 2px 18px;
+
+            a {
+                font-family: $font-family-logo;
+                font-size: 29px;
+                line-height: 23px;
+                letter-spacing: -40;
+                color: white;
+                text-decoration: none;
+            }
+
+        }
+
+        .mainNavigation {
+            margin: 28px 10px 0 10px;
+           
+
+            ul {
+                list-style: none;
+                margin: 0;
+              
+
+                li {
+                    display: inline-block;
+                    background-color: #066666;
+                    border-radius: 0;
+                    height: 30px;  
+                    margin-right: 2px;
+
+                    &:hover {
+                        background-color: #039999;
+                    }
+
+                    a {
+                        margin-right: 2px;
+                        color: white;
+                        text-decoration: none;
+                        font-family: $font-family-all;
+                        font-weight: bold;
+                        font-size: $buttons-size;
+                        line-height: 18px;
+                        padding: 8px 30px;
+                    }
+
+                    .gameBtn {
+                         padding: 7px 18px 7px;       
+                    }
+
+                    i {
+                        margin-left: 16px;
+                        margin-bottom: 3px;
+                        color: white;    
+                    }
+                }
+
+                nav {
+            
+    
+                    .dropDown-menu {
+                        width: 148px;
+                        list-style: none;
+                        margin-top: -3px;
+                        background-color: #066666;
+                        position: absolute;
+                        visibility: hidden;
+                        z-index: 5;
+                        text-align: left;
+    
+                        hr {
+                            margin: 0 4px;
+                            border: 1px solid #83b3b3;
+                        }
+    
+                        li {
+                            display: inline-block;
+                            background-color: #066666;
+                            border-radius: 0;
+                            padding-left: 10px;
+                            height: auto;
+                            
+                            a {
+                                font-family: $font-family-all;
+                                font-size: 12px;
+                                padding: 0;
+                                line-height: 10px;
+                                font-weight: lighter;
+                            }
+    
+                            &:hover {
+                                background-color: #039999;
+                            }
+
+                            
+                        }  
+                    }
+                }
+            }   
+        }
+    }
+
+    #allContent {
+        padding: 0 15px;
+
+        .mainContent {
+            background-color: #1E3A3A;
+            border: 10px solid #066666;
+            padding: 0;
+
+            hr {
+                border-top: 1px solid black;
+                border-bottom: 1px solid #616f6f;
+                margin: 0 10px;
+            }
+
+            h1 {
+                color: white;
+                font-family: 'Verdana Regular';
+                font-size: $h1-diff-size;
+                margin: 27px 0 0 27px;
+            }
+
+            .main-content {
+                padding: 16px 27px 178px 21px;
+
+                p {
+                    color: white;
+                    line-height: 18px;
+                    font-size: $context-p;
+                    font-family: $font-family-all;
+                    text-indent: 36px;
+                    font-weight: 0;
+                    text-align: left;
+                    letter-spacing: -0.4px;
+                }
+            }
+        }
+
+        .asideContent {
+            padding: 16px 0 0 10px;
+            border: 10px solid #055252;
+            background-color: #022929;
+            color: white;
+
+            .iconMail {
+
+                h6 {
+                    font-family: $font-family-all;
+                    font-size: $h6-diff-size;
+                    margin: 0;
+                }
+
+                .iconE {
+                    display: inline-block;
+                    width: 42px;
+                    height: 42px;
+                    background-color: #616f6f;
+                    margin: 20px 16px 0 0;
+
+                    i {
+                        font-size: 21px;
+                        padding: 12px 10px;
+                    }
+                }
+            }
+
+            .articleCategories {
+                margin-top: 40px;
+
+                h6 {
+                    font-family: $font-family-all;
+                    font-size: $h6-diff-size;
+
+                }
+
+                a {
+                    display: block;
+                    color: white;
+                    font-family: $font-family-article;
+                    font-size: 16px;
+                    text-decoration: underline;
+                }
+            }
+
+            .recentStories {
+                margin-top: 30px;
+
+                h6 {
+                    font-family: $font-family-all;
+                    font-size: $h6-diff-size;
+                    margin-bottom: 20px;
+                }
+
+                .imageCard {
+                    padding-right: 10px;
+                    padding-bottom: 10px;
+                    
+
+                    img {
+                        width: 100%;
+                    }
+
+                    .carousel-indicators {
+                        
+                       bottom: -30px;
+                        
+                        li {
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 100%;
+                    }
+                    
+                }  
+            }
+         }
+
+        }
+    }
+
+    footer {
+        height: auto;
+        margin: 10px 0;
+        background-color: #066666;
+
+        .footerText p {
+            margin: 0;
+            padding: 8px;
+            color: white;
+            font-size: 14px;
+            font-family: $font-family-all;
+        }
+
+        .footerNav {
+
+            padding: 8px;
+
+            a {
+                font-size: 14px;
+                color: white;
+                text-decoration: underline;
+                font-family: $font-family-all;
+                margin-right: 17px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px ) {
+       .mainNavigation, ul, li, a {
+            font-size: 0.875em;      
+       }
+}

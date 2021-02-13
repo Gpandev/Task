@@ -1,0 +1,278 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+#wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 10px 64px 0 64px;
+}
+
+#wrapper .vertical-logo {
+  width: 32px;
+  height: 110px;
+  margin-top: 75px;
+  background-color: #066666;
+  position: absolute;
+  margin-left: -64px;
+}
+
+#wrapper .vertical-logo span {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  color: white;
+  font-family: "Showcard Gothic Regular";
+  font-size: 29px;
+  line-height: 23px;
+  letter-spacing: -13px;
+  padding-left: 4px;
+}
+
+#wrapper .navHeader {
+  height: auto;
+  background-color: #022929;
+  margin-bottom: 10px;
+  padding-top: 14px;
+}
+
+#wrapper .navHeader .headerLogo {
+  background-color: #066666;
+  height: 32px;
+  width: 106px;
+  padding: 7px 21px 2px 18px;
+}
+
+#wrapper .navHeader .headerLogo a {
+  font-family: "Showcard Gothic Regular";
+  font-size: 29px;
+  line-height: 23px;
+  letter-spacing: -40;
+  color: white;
+  text-decoration: none;
+}
+
+#wrapper .navHeader .mainNavigation {
+  margin: 28px 10px 0 10px;
+}
+
+#wrapper .navHeader .mainNavigation ul {
+  list-style: none;
+  margin: 0;
+}
+
+#wrapper .navHeader .mainNavigation ul li {
+  display: inline-block;
+  background-color: #066666;
+  border-radius: 0;
+  height: 30px;
+  margin-right: 2px;
+}
+
+#wrapper .navHeader .mainNavigation ul li:hover {
+  background-color: #039999;
+}
+
+#wrapper .navHeader .mainNavigation ul li a {
+  margin-right: 2px;
+  color: white;
+  text-decoration: none;
+  font-family: "Tahoma Regular";
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 18px;
+  padding: 8px 30px;
+}
+
+#wrapper .navHeader .mainNavigation ul li .gameBtn {
+  padding: 7px 18px 7px;
+}
+
+#wrapper .navHeader .mainNavigation ul li i {
+  margin-left: 16px;
+  margin-bottom: 3px;
+  color: white;
+}
+
+#wrapper .navHeader .mainNavigation ul nav .dropDown-menu {
+  width: 148px;
+  list-style: none;
+  margin-top: -3px;
+  background-color: #066666;
+  position: absolute;
+  visibility: hidden;
+  z-index: 5;
+  text-align: left;
+}
+
+#wrapper .navHeader .mainNavigation ul nav .dropDown-menu hr {
+  margin: 0 4px;
+  border: 1px solid #83b3b3;
+}
+
+#wrapper .navHeader .mainNavigation ul nav .dropDown-menu li {
+  display: inline-block;
+  background-color: #066666;
+  border-radius: 0;
+  padding-left: 10px;
+  height: auto;
+}
+
+#wrapper .navHeader .mainNavigation ul nav .dropDown-menu li a {
+  font-family: "Tahoma Regular";
+  font-size: 12px;
+  padding: 0;
+  line-height: 10px;
+  font-weight: lighter;
+}
+
+#wrapper .navHeader .mainNavigation ul nav .dropDown-menu li:hover {
+  background-color: #039999;
+}
+
+#wrapper #allContent {
+  padding: 0 15px;
+}
+
+#wrapper #allContent .mainContent {
+  background-color: #1E3A3A;
+  border: 10px solid #066666;
+  padding: 0;
+}
+
+#wrapper #allContent .mainContent hr {
+  border-top: 1px solid black;
+  border-bottom: 1px solid #616f6f;
+  margin: 0 10px;
+}
+
+#wrapper #allContent .mainContent h1 {
+  color: white;
+  font-family: 'Verdana Regular';
+  font-size: 48px;
+  margin: 27px 0 0 27px;
+}
+
+#wrapper #allContent .mainContent .main-content {
+  padding: 16px 27px 178px 21px;
+}
+
+#wrapper #allContent .mainContent .main-content p {
+  color: white;
+  line-height: 18px;
+  font-size: 12px;
+  font-family: "Tahoma Regular";
+  text-indent: 36px;
+  font-weight: 0;
+  text-align: left;
+  letter-spacing: -0.4px;
+}
+
+#wrapper #allContent .asideContent {
+  padding: 16px 0 0 10px;
+  border: 10px solid #055252;
+  background-color: #022929;
+  color: white;
+}
+
+#wrapper #allContent .asideContent .iconMail h6 {
+  font-family: "Tahoma Regular";
+  font-size: 16px;
+  margin: 0;
+}
+
+#wrapper #allContent .asideContent .iconMail .iconE {
+  display: inline-block;
+  width: 42px;
+  height: 42px;
+  background-color: #616f6f;
+  margin: 20px 16px 0 0;
+}
+
+#wrapper #allContent .asideContent .iconMail .iconE i {
+  font-size: 21px;
+  padding: 12px 10px;
+}
+
+#wrapper #allContent .asideContent .articleCategories {
+  margin-top: 40px;
+}
+
+#wrapper #allContent .asideContent .articleCategories h6 {
+  font-family: "Tahoma Regular";
+  font-size: 16px;
+}
+
+#wrapper #allContent .asideContent .articleCategories a {
+  display: block;
+  color: white;
+  font-family: "Verdana Regular";
+  font-size: 16px;
+  text-decoration: underline;
+}
+
+#wrapper #allContent .asideContent .recentStories {
+  margin-top: 30px;
+}
+
+#wrapper #allContent .asideContent .recentStories h6 {
+  font-family: "Tahoma Regular";
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+#wrapper #allContent .asideContent .recentStories .imageCard {
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
+#wrapper #allContent .asideContent .recentStories .imageCard img {
+  width: 100%;
+}
+
+#wrapper #allContent .asideContent .recentStories .imageCard .carousel-indicators {
+  bottom: -30px;
+}
+
+#wrapper #allContent .asideContent .recentStories .imageCard .carousel-indicators li {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+}
+
+#wrapper footer {
+  height: auto;
+  margin: 10px 0;
+  background-color: #066666;
+}
+
+#wrapper footer .footerText p {
+  margin: 0;
+  padding: 8px;
+  color: white;
+  font-size: 14px;
+  font-family: "Tahoma Regular";
+}
+
+#wrapper footer .footerNav {
+  padding: 8px;
+}
+
+#wrapper footer .footerNav a {
+  font-size: 14px;
+  color: white;
+  text-decoration: underline;
+  font-family: "Tahoma Regular";
+  margin-right: 17px;
+}
+
+@media screen and (max-width: 768px) {
+  .mainNavigation, ul, li, a {
+    font-size: 0.875em;
+  }
+}
+/*# sourceMappingURL=style.css.map */
